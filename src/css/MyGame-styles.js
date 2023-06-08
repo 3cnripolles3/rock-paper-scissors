@@ -2,7 +2,7 @@ import { css } from 'lit';
 
 export const MyGameStyles = css`
   header {
-    background-color: #2e2e31;
+    background-color: #9797A5;
     height: 80px;
     display: flex;
     justify-content: space-between;

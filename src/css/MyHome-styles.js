@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
 export const MyHomeStyles = css`
-section {
+  section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@ section {
   #name {
     height: 55px;
     width: 90%;
-    border: 0.2px solid #848284;
+    border: 0.2px solid #585658;
     border-radius: 5px;
     font-size: 16px;
     padding: 0 20px;
@@ -44,7 +44,7 @@ section {
     left: 15px;
     top: 19px;
     padding: 0 4px;
-    color: #848284;
+    color: #585658;
     font-size: 18px;
     transition: 0.3s;
   }
@@ -71,7 +71,7 @@ section {
     margin-top: 40px;
     margin-right: 50px;
     background-color: #86c2fa;
-    color: #527595;
+    color: #1d2e3f;
     border: 2px solid #b7d2e9;
     border-radius: 5px;
     padding: 12px;

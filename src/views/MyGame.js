@@ -35,7 +35,7 @@ export class MyGame extends LitElement {
     return html`
       <section>
         <header>
-          <p>${this.welcome} ${this.userName}</p>
+          <p id="username">${this.welcome} ${this.userName}</p>
           <a href="/home">
             <img
               class="go-out"
