@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
 export const MyGameStyles = css`
-header {
+  header {
     background-color: #2e2e31;
     height: 80px;
     display: flex;
@@ -23,7 +23,6 @@ header {
     flex-direction: column;
     text-align: center;
     width: 100vw;
-    height: 100vh;
     margin-top: 20%;
   }
 
