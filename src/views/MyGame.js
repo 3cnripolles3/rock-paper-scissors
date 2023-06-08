@@ -11,16 +11,24 @@ export class MyGame extends LitElement {
       scoreText: { type: String },
       yourscore: { type: Number },
       gameOptions: { type: Array },
+      players: { type: Array },
     };
   }
 
   constructor() {
     super();
     this.welcome = 'Hi';
-    this.userName = 'Player';
+    this.userName = localStorage.getItem('user');
     this.scoreText = 'Score';
     this.yourscore = 0;
     this.gameOptions = ['rock', 'paper', 'scissors'];
+    this.players = [];
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.getPlayers();
+    this.initializeScore();
   }
 
   render() {
@@ -117,7 +125,30 @@ export class MyGame extends LitElement {
     if (whoWins[playerOption] !== botOption) return 'You lose!';
 
     this.yourscore += 1;
+    this.savePlayers(this.yourscore);
     return 'You win!';
+  }
+
+  getPlayers() {
+    this.players = JSON.parse(localStorage.getItem('players')) || [];
+  }
+
+  initializeScore() {
+    const userName = this.players.find(user => user.name === this.userName);
+    if (userName) this.yourscore = userName.score;
+  }
+
+  savePlayers(score) {
+    const data = this.players;
+    const userName = data.find(user => user.name === this.userName);
+    if (userName) {
+      userName.score = score;
+    } else {
+      const name = this.userName;
+      const newPlayer = { name, score };
+      data.push(newPlayer);
+    }
+    localStorage.setItem('players', JSON.stringify(data));
   }
 }
 
